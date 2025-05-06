@@ -1,0 +1,1146 @@
+<html>
+    <header>
+        <title>SolarSur</title>
+            <a href="index.html" class="logo_link"> 
+                <h1 class="logo"><img src="Recurso 1.svg" alt="" class="tamaño-logo"></h1>
+            </a>
+        <!--llamar al archivo donde se agregaran los estilos-->
+        <link rel="stylesheet" href="styles.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <div class="hamburguesa">
+        <div class="contenedor_menu">
+            <div class="menu_linea" onclick="toggleMenu()">
+                <div class="opcion"></div>
+                <div class="opcion"></div>
+                <div class="opcion"></div>
+            </div>
+        </div>
+        <div id="efecto_menu" class="efecto_menu">
+            <!-- Botones del formulario -->
+            <div class="menu-buttons">
+                <a href="index.html">inicio</a>
+                <a href="#contacto">Contacto</a>
+                <a href="#informacion">Nosotros</a>
+                <a href="#mapa">Ubícanos</a>                
+                <a href="#beneficios">Beneficios</a>
+                <a href="#productos">Productos</a>
+            </div>
+        </div>
+        <script>
+            function toggleMenu() {
+                const efectoMenu = document.getElementById('efecto_menu');
+                efectoMenu.classList.toggle('activo'); // Alterna la clase 'activo' para mostrar/ocultar el menú
+            }
+        </script>
+    </div>
+
+
+    <style>
+        
+        
+        .efecto_menu {
+            display: none; /* Oculta el menú por defecto */
+            position: fixed; /* Fija el menú en la pantalla */
+            top: 0;
+            right: 0;
+            width: 120px; /* Ancho del menú */
+            height: 100%; /* Ocupa toda la altura de la pantalla */
+            background-color: #0f070783; /* Fondo claro */
+            padding: 15px;
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5); /* Sombra para destacar el menú */
+            z-index: 1000;
+            overflow-y: auto; /* Permite desplazamiento si el contenido excede la altura */
+            border-radius: 0; /* Sin bordes redondeados */
+        }
+    
+        .efecto_menu.activo {
+            display: block; /* Muestra el menú cuando está activo */
+        }
+    
+        .menu-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 2px; /* Espacio reducido entre los bloques */
+            margin-top: 100px;
+        }
+    
+        .menu-buttons a {
+            display: block; /* Convierte los botones en bloques */
+            width: 100%; /* Ocupa todo el ancho del menú */
+            padding: 10px; /* Ajusta el espacio interno */
+            font-size: 17px; /* Tamaño del texto */
+            color: white;
+            border: none;
+            border-radius: 0; /* Sin bordes redondeados */
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+        }
+    
+        .menu-buttons a:hover {
+            background-color: #155a9c; /* Color al pasar el mouse */
+            opacity: 0.9; /* Efecto de opacidad */
+        }
+
+        .menu_linea {
+            display: flex;
+            flex-direction: column;
+            gap: 4px; /* Reduce el espacio entre las líneas */
+            cursor: pointer;
+            margin-top: 32px;
+            margin-right: 10px;
+        }
+        
+
+        .contenedor_menu {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 1100; /* Asegura que el botón esté encima del menú */
+            gap: 10px; /* Espacio entre el botón y el menú */
+        }
+
+        
+
+        .opcion {
+            width: 18px; /* Reduce el ancho de las líneas */
+            height: 2px; /* Reduce el grosor de las líneas */
+            background-color: #ffffff; /* Color de las líneas */
+            border-radius: 2px; /* Bordes redondeados */
+            transition: transform 0.3s ease, opacity 0.3s ease; /* Transiciones suaves */
+        }
+
+        /* Mantén el botón visible incluso cuando el menú esté activo */
+        .efecto_menu.activo + .contenedor_menu {
+            display: block;
+        }
+        
+        /* Oculta el botón hamburguesa en pantallas grandes */
+@media (min-width: 769px) {
+    .contenedor_menu {
+        display: none; /* Oculta el botón hamburguesa */
+    }
+}
+    </style>
+
+        <form action="post">
+            <button href="index.html">Inicio</button>
+            <button formaction="#contacto">Contacto</button>
+            <button formaction="#informacion">Nosotros</button>
+            <button formaction="#mapa">Encuéntranos</button>
+            <button formaction="#beneficios">Beneficios</button>
+            <button formaction="#productos">Productos</button>            
+        </form>
+</header>
+<script>
+    window.addEventListener('scroll', function () {
+        const header = document.querySelector('header');
+        if (window.scrollY > 50) { // Cambia el valor según cuándo quieras que se active
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+</script>
+<script>
+    document.querySelectorAll('button[formaction]').forEach(button => {
+        button.addEventListener('click', function (event) {
+            event.preventDefault(); // Evita el comportamiento predeterminado
+            const targetId = this.getAttribute('formaction').substring(1); // Obtiene el ID del destino
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' }); // Desplazamiento suave
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body>
+    
+
+<div class="imagen_body">
+    <img src="imagen_body.jpg" alt="Imagen de fondo" style="width: 100%; height: 100%; object-fit: cover; position: absolute; z-index: -1;">
+    <div class="texto_central">
+        <h1>Bienvenidos a SolarSur</h1>
+        <p>La energía del futuro, hoy</p>
+        <div class="botones-container">
+            <a href="#contacto" class="boton">
+                <img src="https://img.icons8.com/color/48/marker.png" alt="Ubicación" style="width: 40px; height: 40px; margin-bottom: 10px;">
+            </a>
+            <a href="https://wa.me/51908823893" target="_blank" > 
+                <img width="50" height="50" src="https://img.icons8.com/color/48/whatsapp.png" alt="whatsapp"/> 
+            </a> 
+        </div>
+    </div>
+ 
+    <style>
+        .botones-container {
+    display: flex; /* Alinea los botones horizontalmente */
+    gap: 20px; /* Espaciado uniforme entre los íconos */
+    justify-content: center; /* Centra los botones horizontalmente */
+    align-items: center; /* Alinea los íconos verticalmente */
+    margin-top: 20px; /* Espaciado superior para separar los botones del texto */
+}
+.texto_central h1 {
+    font-size: 50px; /* Tamaño del título */
+    
+}
+
+.boton img {
+    display: block; /* Asegura que las imágenes no tengan espacio adicional */
+    width: 40px; /* Ajusta el tamaño del ícono */
+    height: 40px; /* Ajusta el tamaño del ícono */
+}
+        .texto_central {
+    text-align: center; /* Centra el texto */
+}
+
+.botones-container {
+    display: flex; /* Alinea los botones horizontalmente */
+    gap: 10px; /* Espaciado entre los botones */
+    justify-content: center; /* Centra los botones horizontalmente */
+    margin-top: 20px; /* Espaciado superior para separar los botones del texto */
+}
+.botones-container a:hover {
+    opacity: 0.8; /* Reduce la opacidad al pasar el cursor */
+}
+
+.boton:hover {
+    opacity: 0.8; /* Reduce la opacidad al pasar el cursor */
+}
+    </style>
+    <script>
+        document.querySelectorAll('.boton').forEach(button => {
+    button.addEventListener('click', function (event) {
+        event.preventDefault(); // Evita el comportamiento predeterminado del enlace
+        const targetId = this.getAttribute('href').substring(1); // Obtiene el ID del destino
+        const targetElement = document.getElementById(targetId); // Busca el elemento con el ID
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' }); // Desplazamiento suave
+        }
+        });
+    });
+    </script>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="bloque_texto" >
+
+    <div id="caracteristicas" class="caracteristicas">
+        <div class="texto">
+        <h2>Caracteristicas</h2>
+        </div>
+        <div class="caracteristicas-container">
+            <div class="caracteristica">
+                
+                <i class="fas fa-trophy" style="color: rgb(255, 255, 255); font-size: 24px;"></i>
+                <p class="descripcion">Descripcion</p>
+                <h3>caracteristica 1</h3>
+            </div>
+            
+            <div class="caracteristica">
+                
+                <i class="fas fa-trophy" style="color: rgb(255, 255, 255); font-size: 24px;"></i>
+                <p class="descripcion">Descripcion</p>
+                <h3>caracteristica 2</h3>
+                
+            </div>
+            <div class="caracteristica">
+                
+                <i class="fas fa-trophy" style="color: rgb(255, 255, 255); font-size: 24px;"></i>
+                <p class="descripcion">Descripcion</p>
+                <h3>caracteristica 3</h3>
+                
+            </div>
+            <div class="caracteristica">
+                
+                <i class="fas fa-trophy" style="color: rgb(255, 255, 255); font-size: 24px;"></i>
+                <p class="descripcion">Descripcion</p>
+                <h3>caracteristica 3</h3>
+                
+            </div>
+        </div>
+
+        <style>
+.caracteristicas-container {
+    display: flex; /* Alinea los bloques horizontalmente */
+    gap: 10px; /* Reduce el espaciado entre los bloques */
+    justify-content: center; /* Centra los bloques horizontalmente */
+    margin: 10px; /* Reduce el margen general */
+}
+
+.caracteristica {
+    background-color: rgba(1, 36, 124); /* Fondo rojo */
+    color: white; /* Texto blanco */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 10px; /* Reduce el padding interno */
+    text-align: center; /* Centra el contenido */
+    width: 150px; /* Reduce el ancho del bloque */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra más pequeña */
+}
+
+
+
+.caracteristica h3 {
+    font-size: 16px; /* Reduce el tamaño del título */
+    margin-bottom: 5px; /* Reduce el margen inferior */
+}
+
+.caracteristica .descripcion {
+    font-size: 12px; /* Reduce el tamaño del texto */
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+@media (max-width: 768px) {
+    .caracteristicas-container {
+        display: grid; /* Cambia a diseño de cuadrícula */
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas de igual ancho */
+        gap: 10px; /* Espaciado entre los bloques */
+        justify-items: center; /* Centra los bloques horizontalmente */
+    }
+
+    .caracteristica {
+        width: 100%; /* Asegura que los bloques ocupen todo el ancho disponible */
+    }
+}
+
+    </style>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="informacion" class="informacion">
+        <div class="texto">
+        <h2>Sobre Nosotros</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, fugit libero. Beatae doloremque et autem unde laudantium recusandae tempora aut obcaecati harum, qui vel asperiores voluptates possimus earum minima laborum!</p>
+        </div>
+        <div class="imagen">
+        <img src="mas_informacion.jpg" alt="Información adicional">
+        </div>
+    </div>
+
+    <style>
+        @media (max-width: 768px) {
+    .informacion {
+        display: flex; /* Activa flexbox */
+        flex-direction: column; /* Coloca los elementos en una columna */
+        align-items: center; /* Centra los elementos horizontalmente */
+        text-align: center; /* Centra el texto */
+        gap: 10px; /* Reduce el espacio entre el texto y la imagen */
+    }
+
+    .informacion .texto {
+        margin-bottom: 10px; /* Reduce el margen inferior del texto */
+    }
+
+    .informacion .imagen {
+        margin-top: 0; /* Elimina cualquier margen superior de la imagen */
+        width: 100%; /* Asegura que la imagen ocupe todo el ancho disponible */
+    }
+
+    .informacion .imagen img {
+        width: 100%; /* Ajusta la imagen al ancho del contenedor */
+        height: auto; /* Mantiene la proporción de la imagen */
+    }
+
+    .informacion .texto h2 {
+        font-size: 18px; /* Reduce el tamaño del título */
+    }
+
+    .informacion .texto p {
+        font-size: 14px; /* Reduce el tamaño del texto */
+        line-height: 1.5; /* Ajusta el espaciado entre líneas para mejor legibilidad*/
+    }
+}
+    </style>
+
+    <br><br><br>
+    <h1 id="productos">TERMAS SOLARES: Tubos al vacío</h1>
+    <div class="carrusel-container">
+        <button class="prev" onclick="moveSlide(-1, 'carrusel1')">&#10094;</button>
+        <div class="carrusel" id="carrusel1" data-current-slide="0">
+            <div class="carrusel-item">
+                <div class="card">
+                    <div class="image-placeholder"></div>
+                    <div class="info">
+                        <p>Nombre de terma</p>
+                        <p>Capacidad en litros</p>
+                        <p>Número de personas</p>
+                        <p>Años de garantía</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carrusel-item">
+                <div class="card">
+                    
+                    <div class="image-placeholder"></div>
+                    <div class="info">
+                        <p>Nombre de terma</p>
+                        <p>Capacidad en litros</p>
+                        <p>Número de personas</p>
+                        <p>Años de garantía</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carrusel-item">
+                <div class="card">
+                    
+                    <div class="image-placeholder"></div>
+                    <div class="info">
+                        <p>Nombre de terma</p>
+                        <p>Capacidad en litros</p>
+                        <p>Número de personas</p>
+                        <p>Años de garantía</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carrusel-item">
+                <div class="card">
+                    
+                    <div class="image-placeholder"></div>
+                    <div class="info">
+                        <p>Nombre de terma</p>
+                        <p>Capacidad en litros</p>
+                        <p>Número de personas</p>
+                        <p>Años de garantía</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carrusel-item">
+                <div class="card">
+                    
+                    <div class="image-placeholder"></div>
+                    <div class="info">
+                        <p>Nombre de terma</p>
+                        <p>Capacidad en litros</p>
+                        <p>Número de personas</p>
+                        <p>Años de garantía</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="next" onclick="moveSlide(1, 'carrusel1')">&#10095;</button>
+    </div>
+
+
+
+
+
+
+
+
+    <style>
+        .carrusel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-color: #f0f0f0;
+    padding: 20px 0;
+}
+
+.carrusel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+.carrusel-item {
+    min-width: 25%; /* Cada ítem ocupa el 25% del ancho */
+    box-sizing: border-box;
+    padding: 10px;
+    
+}
+
+.card {
+    background-color: rgba(1, 36, 124);
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+}
+
+
+
+.image-placeholder {
+    width: 100%;
+    height: 280px;
+    background-color: #ccc;
+    margin-bottom: 10px;
+}
+
+.info p {
+    background-color: #d0d0d0;
+    margin: 5px 0;
+    padding: 5px;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+}
+
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+}
+
+button.prev:hover, button.next:hover {
+    background-color: #333;
+}
+
+@media (max-width: 768px) {
+    .carrusel-item {
+        min-width: 100%; /* Cada ítem ocupa el 50% del ancho en pantallas pequeñas */
+        box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
+    }
+    h1{
+        font-size: 25px;
+    }
+    
+}
+    </style>
+
+
+
+<div class="complementario">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores minus obcaecati vero possimus, adipisci recusandae quos quibusdam illo, aliquid illum mollitia unde iste voluptatibus nulla necessitatibus, eius non neque. Quis!</p>
+    <div class="botones-container">
+        <a href="#contacto" class="boton">
+            <img src="https://img.icons8.com/color/48/marker.png" alt="Ubicación" style="width: 40px; height: 40px; margin-bottom: 10px;">
+        </a>
+        <a href="https://wa.me/51908823893" target="_blank" > 
+            <img width="50" height="50" src="https://img.icons8.com/color/48/whatsapp.png" alt="whatsapp"/> 
+        </a> 
+    </div>
+    <style>
+        /*que el texto este al costado de los iconos*/
+        .complementario {
+    display: flex; /* Alinea los elementos horizontalmente */
+    align-items: center; /* Alinea verticalmente al centro */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    gap: 20px; /* Espaciado entre el texto y los botones */
+    margin: 20px; /* Espaciado alrededor del contenedor */
+    }
+    </style>
+</div>
+
+<h1 id="paneles-solares">TERMAS SOLARES: Placa plana</h1>
+<div class="carrusel-container">
+    <button class="prev" onclick="moveSlide(-1, 'carrusel2')">&#10094;</button>
+    <div class="carrusel" id="carrusel2" data-current-slide="0">
+        <div class="carrusel-item">
+            <div class="card">
+                <div class="image-placeholder" ></div>
+                <div class="info">
+                    <p>Nombre de terma</p>
+                    <p>Capacidad en litros</p>
+                    <p>Número de personas</p>
+                    <p>Años de garantía</p>
+                </div>
+            </div>
+        </div>
+        <div class="carrusel-item">
+            <div class="card">
+                <div class="image-placeholder" ></div>
+                <div class="info">
+                    <p>Nombre de terma</p>
+                    <p>Capacidad en litros</p>
+                    <p>Número de personas</p>
+                    <p>Años de garantía</p>
+                </div>
+            </div>
+        </div>
+        <div class="carrusel-item">
+            <div class="card">
+                <div class="image-placeholder"></div>
+                <div class="info">
+                    <p>Nombre de terma</p>
+                    <p>Capacidad en litros</p>
+                    <p>Número de personas</p>
+                    <p>Años de garantía</p>
+                </div>
+            </div>
+        </div>
+        <div class="carrusel-item">
+            <div class="card">
+                <div class="image-placeholder" ></div>
+                <div class="info">
+                    <p>Nombre de terma</p>
+                    <p>Capacidad en litros</p>
+                    <p>Número de personas</p>
+                    <p>Años de garantía</p>
+                </div>
+            </div>
+        </div>
+        <div class="carrusel-item">
+            <div class="card">
+                <div class="image-placeholder" ></div>
+                <div class="info">
+                    <p>Nombre de terma</p>
+                    <p>Capacidad en litros</p>
+                    <p>Número de personas</p>
+                    <p>Años de garantía</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="next" onclick="moveSlide(1, 'carrusel2')">&#10095;</button>
+</div>
+
+
+
+<script>
+function moveSlide(direction, carruselId) {
+    const carrusel = document.getElementById(carruselId); // Selecciona el carrusel por su ID
+    const items = carrusel.querySelectorAll('.carrusel-item'); // Obtiene los elementos del carrusel
+    const totalSlides = items.length;
+
+    // Obtiene el índice actual del carrusel desde el atributo data-current-slide
+    let currentSlide = parseInt(carrusel.dataset.currentSlide || 0);
+
+    // Ajusta el desplazamiento según el tamaño de la pantalla
+    const isMobile = window.innerWidth <= 768; // Detecta si es móvil
+    const step = isMobile ? 1 : 1; // Avanza 1 ítem en móvil y escritorio
+
+    currentSlide += direction * step;
+
+    // Asegura que el índice esté dentro del rango
+    if (currentSlide < 0) {
+        currentSlide = totalSlides - 1;
+    } else if (currentSlide >= totalSlides) {
+        currentSlide = 0;
+    }
+
+    // Actualiza el índice actual en el atributo data-current-slide
+    carrusel.dataset.currentSlide = currentSlide;
+
+    // Calcula el desplazamiento y aplica la transformación
+    const offset = -currentSlide * 100; // Desplaza el carrusel en función del índice
+    carrusel.style.transform = `translateX(${offset}%)`;
+}
+</script>
+
+
+<div class="complementario">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores minus obcaecati vero possimus, adipisci recusandae quos quibusdam illo, aliquid illum mollitia unde iste voluptatibus nulla necessitatibus, eius non neque. Quis!</p>
+    <div class="botones-container">
+        <a href="#contacto" class="boton">
+            <img src="https://img.icons8.com/color/48/marker.png" alt="Ubicación" style="width: 40px; height: 40px; margin-bottom: 10px;">
+        </a>
+        <a href="https://wa.me/51908823893" target="_blank" > 
+            <img width="50" height="50" src="https://img.icons8.com/color/48/whatsapp.png" alt="whatsapp"/> 
+        </a> 
+    </div>
+    <style>
+        @media (max-width: 768px) {
+    .complementario {
+        display: flex; /* Activa flexbox */
+        flex-direction: column; /* Coloca los elementos en una columna */
+        align-items: center; /* Centra los elementos horizontalmente */
+        text-align: center; /* Centra el texto */
+        gap: 10px; /* Espaciado entre el texto y los íconos */
+    }
+
+    .complementario p {
+        margin-bottom: 10px; /* Espaciado inferior para separar el texto de los íconos */
+    }
+
+    .botones-container {
+        display: flex; /* Mantiene los íconos alineados horizontalmente */
+        gap: 20px; /* Espaciado entre los íconos */
+        justify-content: center; /* Centra los íconos horizontalmente */
+    }
+}
+    </style>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="image-gallery">
+    <!-- Imagen principal -->
+    <div class="main-image-container">
+        <div class="main-image">
+            <img id="mainImage" src="miniatura1.jpeg" alt="Imagen principal">
+        </div>
+
+        <!-- Contenedor de miniaturas debajo de la imagen -->
+        <div class="thumbnail-container">
+            <img class="thumbnail" src="miniatura1.jpeg" alt="Miniatura 1" onclick="changeImage('miniatura1.jpeg')">
+            <img class="thumbnail" src="miniatura2.jpeg" alt="Miniatura 2" onclick="changeImage('miniatura2.jpeg')">
+            <img class="thumbnail" src="miniatura3.jpg" alt="Miniatura 3" onclick="changeImage('miniatura3.jpg')">
+            <img class="thumbnail" src="miniatura4.jpg" alt="Miniatura 4" onclick="changeImage('miniatura4.jpg')">
+        </div>
+    </div>
+
+    <!-- Contenedor del texto al costado de la imagen -->
+    <div class="texto-al-costado">
+        <h2 class="thumbnail-text">Paneles Solares</h2>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In accusantium fuga consectetur cupiditate laborum neque aut ullam, quas, suscipit, magnam est sed eligendi exercitationem tenetur tempore vero quis quo consequuntur!<br> 
+            <div class="botones-container">
+                <a href="#contacto" class="boton">
+                    <img src="https://img.icons8.com/color/48/marker.png" alt="Ubicación" style="width: 40px; height: 40px; margin-bottom: 10px;">
+                </a>
+                <a href="https://wa.me/51908823893" target="_blank" > 
+                    <img width="50" height="50" src="https://img.icons8.com/color/48/whatsapp.png" alt="whatsapp"/> 
+                </a></div>
+        </p>
+    </div>
+</div>
+<script>
+    function changeImage(imageSrc) {
+    const mainImage = document.getElementById('mainImage');
+    mainImage.src = imageSrc; // Cambia la fuente de la imagen principal
+}
+</script>
+
+    <style>
+        
+.image-gallery {
+    display: flex; /* Alinea los elementos horizontalmente */
+    flex-direction: row; /* Coloca los elementos en una fila */
+    align-items: flex-start; /* Alinea los elementos al inicio verticalmente */
+    gap: 65px; /* Incrementa el espaciado entre la imagen principal y el texto */
+    margin: 20px;
+    justify-content: center;    
+    font-family: 'Inter', sans-serif; /* Aplica la fuente Inter al cuerpo */
+}
+.main-image-container {
+    display: flex;
+    flex-direction: column; /* Coloca la imagen principal y los thumbnails en una columna */
+    align-items: center; /* Centra los elementos horizontalmente */
+    gap: 10px; /* Espaciado entre la imagen principal y los thumbnails */
+}
+
+.main-image img {
+    width: 500px;
+    height: 300px;
+    object-fit: cover;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    transition: transform 0.3s ease; /* Efecto al pasar el mouse */
+}
+
+.main-image img:hover {
+    transform: scale(1.05); /* Zoom al pasar el mouse */
+}
+
+.thumbnail-container {
+    display: flex; /* Cambia a diseño horizontal */
+    gap: 10px; /* Espaciado entre miniaturas */
+    justify-content: center; /* Centra las miniaturas horizontalmente */
+}
+
+.thumbnail {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.thumbnail:hover {
+    transform: scale(1.1);
+    border-color: #1b6dc5;
+}
+
+.texto-al-costado {
+    max-width: 300px; /* Limita el ancho del texto */
+    text-align: left; /* Alinea el texto a la izquierda */
+    font-size: 16px;
+    color: #333;
+}
+@media (max-width: 768px) {
+    .main-image img {
+        width: 300px; /* Reduce el ancho de la imagen principal */
+        height: 200px; /* Reduce la altura de la imagen principal */
+    }
+
+    .thumbnail {
+        width: 70px; /* Reduce el ancho de las miniaturas */
+        height: 70px; /* Reduce la altura de las miniaturas */
+    }
+
+    .image-gallery {
+        flex-direction: column; /* Cambia a diseño vertical en pantallas pequeñas */
+        align-items: center; /* Centra los elementos */
+        gap: 20px; /* Ajusta el espaciado entre la imagen principal y el texto */
+    }
+    .texto-al-costado {
+        text-align: center; /* Centra el texto en pantallas pequeñas */
+    }
+}
+    </style>
+
+
+
+    
+
+    <div class="beneficios" id="beneficios">
+        <h2>Beneficios: Cambios que notara al tener un panel o terma solar</h2>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur, assumenda?</p>
+        <div class="contenedor">
+            <div class="recuadro">
+                <img src="ruta/a/tu/imagen1.jpg" alt="Imagen 1">
+            </div>
+            <div class="recuadro">
+                <img src="ruta/a/tu/imagen2.png" alt="Imagen 2">
+            </div>
+            <div class="recuadro">
+                <img src="ruta/a/tu/imagen3.gif" alt="Imagen 3">
+            </div>
+            <div class="recuadro">
+                <img src="ruta/a/tu/imagen4.jpeg" alt="Imagen 4">
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .contenedor {
+            display: flex;
+            justify-content: space-around; /* Distribuye los recuadros con espacio entre ellos */
+            align-items: center; /* Centra verticalmente los recuadros (opcional) */
+            width: 80%; /* Ancho del contenedor (ajusta según necesites) */
+            margin: 20px auto; /* Centra el contenedor horizontalmente con un margen superior e inferior */
+            padding: 20px; /* Espacio interno del contenedor (opcional) */
+            box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+        }
+
+        .recuadro {
+            width: 20%; /* Ancho aproximado de cada recuadro (ajusta según el espacio que quieras entre ellos) */
+            height: 200px; /* Altura de los recuadros (ajusta según necesites) */
+            border: 1px solid #ccc; /* Borde de los recuadros (opcional) */
+            background-color: #ddd; /* Color de fondo por defecto antes de cargar la imagen */
+            display: flex;
+            justify-content: center; /* Centra la imagen horizontalmente dentro del recuadro */
+            align-items: center; /* Centra la imagen verticalmente dentro del recuadro */
+            overflow: hidden; /* Recorta la imagen si es más grande que el recuadro */
+            box-sizing: border-box;
+        }
+
+        .recuadro img {
+            width: 100%; /* La imagen ocupa todo el ancho del recuadro */
+            height: auto; /* Mantiene la proporción de la imagen */
+            display: block; /* Evita espacios extra debajo de la imagen */
+        }
+
+        /* Opcional: Para que los recuadros se apilen en pantallas más pequeñas */
+        @media (max-width: 768px) {
+            .contenedor {
+                flex-direction: column;
+                align-items: stretch; /* Los recuadros ocupan todo el ancho */
+            }
+            .recuadro {
+                width: 100%;
+                margin-bottom: 10px; /* Espacio entre los recuadros apilados */
+            }
+            .beneficios h2{
+                font-size: 20px;
+            }
+            .beneficios p{
+                font-size: 15px;
+            }
+            
+        }
+    </style>
+
+
+   <br id="mapa">
+
+
+    <div class="bloque-mapa">
+        <div class="contenedor-mapa">
+            <!-- Texto al costado -->
+            <div class="texto-mapa">
+                <h2>Encuéntranos</h2>
+                <p>Estamos ubicados en Tacna, Perú. Visítanos para conocer más sobre nuestros productos y servicios.</p>
+                <img src="" alt="descripcion-personaje">
+            </div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3794.1841848210506!2d-70.25401089033413!3d-18.01665388291083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c90e007863fd%3A0x26e628f52fb1847c!2sSOLARSUR!5e0!3m2!1ses-419!2spe!4v1745943586710!5m2!1ses-419!2spe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+    </div>
+    <style>
+        @media (max-width: 768px) {
+            iframe {
+        width: 100%; /* Ajusta el ancho del mapa al 100% del contenedor */
+        height: 250px; /* Reduce la altura del mapa */
+    }
+        }
+    </style>
+
+
+
+
+
+    <br><br><br><br>
+    
+</div>
+
+
+</body>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer>
+    <div class="social-bar" id="contacto"> 
+        <h1>Contactanos en  solarsurperu1@gmail.com</h1>
+        <a href="https://www.facebook.com/share/18xE3tDNQ9/" target="_blank"> 
+            <img width="50" height="50" src="https://img.icons8.com/color/48/facebook.png" alt="facebook"/> 
+        </a> 
+        <a href="https://wa.me/51908823893" target="_blank"> 
+            <img width="50" height="50" src="https://img.icons8.com/color/48/whatsapp.png" alt="whatsapp"/> 
+        </a> 
+         
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- CHATBOT -->
+
+
+
+    <div id="chat-widget" class="chat-widget">
+        <button id="chat-button">
+            
+            <img src="chatbot.png" alt="Chat"  style="width: 100%;  object-fit: cover;  ">
+        </button>   
+        <div id="chat-container">
+            <div id="chat-messages">
+                <!-- Aquí se mostrarán los mensajes -->
+            </div>
+            <div id="input-container">
+                <input type="text" id="user-input" placeholder="En qué te puedo ayudar...">
+                <button id="send-btn">Enviar</button>
+            </div>
+        </div>
+    </div>
+<script src="chatbot.js"></script>
+
+</footer>
+
+
+<style>
+
+
+
+    #chat-widget {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        z-index: 1000;
+        
+    }
+    #chat-button {
+        width: 60px;
+        height: 60px;
+        background-color: rgba(1, 36, 124);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        font-size: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #chat-container {
+        display: none;
+        position: fixed;
+        bottom: 90px;
+        left: 20px;
+        width: 300px;
+        max-height: 400px;
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        flex-direction: column;
+    }
+    #chat-messages {
+        flex: 1;
+        padding: 10px;
+        overflow-y: auto;
+    }
+    .message {
+        margin: 10px 0;
+        padding: 10px;
+        border-radius: 5px;
+    }
+ 
+    #input-container {
+        display: flex;
+        padding: 10px;
+        border-top: 1px solid #ddd;
+    }
+    #user-input {
+        flex: 1;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+    #send-btn {
+        padding: 10px;
+        background-color: #1b6dc5;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-left: 10px;
+    }
+    #send-btn:hover {
+        background-color: #f6f7f8;
+    }
+    @media (max-width: 768px) {
+    footer h1 {
+        font-size: 18px; /* Reduce el tamaño del texto del correo */
+        text-align: center; /* Centra el texto */
+    }
+}
+</style>
+
+</body>
+
+</html>
